@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `pankratzraceschool-v2`,
@@ -7,7 +11,9 @@ module.exports = {
     resolve: 'gatsby-source-sanity',
     options: {
       "projectId": "alegnslt",
-      "dataset": ""
+      "dataset": "production",
+      "token": process.env.SANITY_TOKEN_V2,
+      "watchMode": true
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", {
     resolve: 'gatsby-plugin-google-analytics',
