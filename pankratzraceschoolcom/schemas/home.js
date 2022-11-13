@@ -4,24 +4,6 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'heading',
-            title: 'Heading',
-            type: 'string'
-        },
-        {
-            name: 'subHeading',
-            title: 'Sub Heading',
-            type: 'string'
-        },
-        {
-            name: 'mainImage',
-            title: 'Main image',
-            type: 'image',
-            options: {
-                hotspot: true
-            }
-        },
-        {
             name: 'body',
             title: 'Body',
             type: 'array',
@@ -46,9 +28,12 @@ export default {
     
     preview: {
         select: {
-            title: 'heading',
-            subtitle: 'subHeading',
-            media: 'mainImage'
+            title: 'title'
+        },
+        prepare(selection) {
+            return {
+                title: 'Home'
+            }
         }
     }
 }

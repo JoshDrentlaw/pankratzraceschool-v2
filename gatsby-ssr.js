@@ -9,6 +9,14 @@ export const onRenderBody = ({ setHeadComponents }) => {
             type="font/woff2"
             crossOrigin="anonymous"
             key="interFont"
-        />
+        />,
+        <link
+            rel="preload"
+            href="/fonts/RacingSansOne-Regular.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+            key="racingSansOne"
+        />,
     ])
 }

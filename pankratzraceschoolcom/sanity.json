@@ -5,7 +5,7 @@
   },
   "api": {
     "projectId": "alegnslt",
-    "dataset": "production"
+    "dataset": "development"
   },
   "plugins": [
     "@sanity/base",
