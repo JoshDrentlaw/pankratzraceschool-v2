@@ -120,15 +120,15 @@ const IndexPage = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="full_name">Full Name</label>
-                        <input type="text" id="full_name" name="full_name" placeholder="Please enter your full name" required />
+                        <input type="text" id="full_name" placeholder="Please enter your full name" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Please enter your email" required />
+                        <input type="email" id="email" placeholder="Please enter your email" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="comments">Comments/Questions</label>
-                        <textarea id="comments" name="comments" placeholder="Leave your comments or questions here" rows="4" required />
+                        <textarea id="comments" placeholder="Leave your comments or questions here" rows="4" required />
                     </div>
                     <button type="submit">Submit</button>
                 </Form>
