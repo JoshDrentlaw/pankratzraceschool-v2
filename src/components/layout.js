@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import styled from "styled-components"
 import signature from '../images/signature.png'
 import icon from '../images/icon.png'
@@ -42,6 +42,46 @@ const Nav = styled.nav`
     display: flex;
     position: sticky;
     justify-content: space-between;
+    top: 0;
+    height: 60px;
+    z-index: 10000;
+`
+
+const NavLinkContainer = styled.div`
+    display: ${props => props.display || 'flex'};
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    position: absolute;
+    top: 59px;
+    background-color: #333;
+    width: 100%;
+    padding-block: 10px;
+    text-align: left;
+    transition: all 400ms ease-in-out;
+
+    @media (min-width: ${Sizes.lg}px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        top: initial;
+        width: auto;
+    }
+`
+
+const Hamburger = styled.i`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    font-style: normal;
+    width: 50px;
+
+    @media (min-width: ${Sizes.lg}px) {
+        display: none;
+    }
 `
 
 const NavLink = styled.a`
@@ -190,14 +230,17 @@ const Footer = styled.footer`
 `
 
 export default function Layout({ children }) {
+    const [menuOpen, setMenuOpen] = useState(false)
+    
     return (
         <Body>
             <Nav>
                 <img src={signature} alt="Wally Pankratz signature" style={{ marginInline: '10px' }} />
-                <div style={{display: 'flex', justifyContent: 'space-around'}}>
+                <Hamburger onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'X' : '☰'}</Hamburger>
+                <NavLinkContainer display={menuOpen ? 'flex' : 'none'}>
                     <NavLink href="/">Home</NavLink>
                     <NavLink href="/about">About</NavLink>
-                </div>
+                </NavLinkContainer>
             </Nav>
             <main>
                 { children }
