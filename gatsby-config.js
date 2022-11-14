@@ -7,37 +7,50 @@ module.exports = {
     title: `pankratzraceschool-v2`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: [{
-    resolve: 'gatsby-source-sanity',
-    options: {
-      "projectId": "alegnslt",
-      "dataset": process.env.NODE_ENV,
-      "token": process.env.SANITY_TOKEN_V2,
-      "watchMode": true
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": "337902628"
-    }
-  }, "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-netlify",
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        "projectId": "alegnslt",
+        "dataset": process.env.NODE_ENV,
+        "token": process.env.SANITY_TOKEN_V2,
+        "watchMode": true
+      }
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        "trackingId": "337902628"
+      }
     },
-    __key: "pages"
-  }]
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/images/icon.png"
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./src/images/"
+      },
+      __key: "images"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "pages",
+        "path": "./src/pages/"
+      },
+      __key: "pages"
+    }
+  ]
 };
