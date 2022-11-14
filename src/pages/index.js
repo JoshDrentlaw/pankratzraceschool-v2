@@ -114,21 +114,21 @@ const IndexPage = () => {
                 <p>Please call or text to find the next best date to run!</p>
                 <p>A 50% down-payment is required for enrollment.</p>
                 <p style={{marginTop: '35px'}}>You can also get in touch with us by filling out our form and we will get back to you as soon as possible.</p>
-                <Form name="contact" netlify-honeypot="bot-field" netlify>
+                <Form name="contact" method="POST" netlify-honeypot="bot-field" netlify>
                     <div style={{display:'none'}}>
                         <input name="bot-field" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="full_name">Full Name</label>
-                        <input type="text" id="full_name" name="full_name" placeholder="Please enter your full name" />
+                        <input type="text" id="full_name" name="full_name" placeholder="Please enter your full name" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Please enter your email" />
+                        <input type="email" id="email" name="email" placeholder="Please enter your email" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="comments">Comments/Questions</label>
-                        <textarea id="comments" name="comments" placeholder="Leave your comments or questions here" rows="4" />
+                        <textarea id="comments" name="comments" placeholder="Leave your comments or questions here" rows="4" required />
                     </div>
                     <button type="submit">Submit</button>
                 </Form>
