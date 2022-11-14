@@ -11,8 +11,6 @@ const Form = styled.form`
     width: 100%;
 
     .form-group {
-        padding-right: 10px;
-
         label {
             font-family: 'RacingSansOne';
             font-size: large;
