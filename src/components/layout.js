@@ -90,14 +90,21 @@ const NavLink = styled.a`
     text-decoration: none;
     font-size: 1.5em;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     min-width: 100px;
     padding-inline: 15px;
+    width: 100%;
+    height: 60px;
 
     &:hover {
         color: #333;
         background-color: white;
+    }
+
+    @media (min-width: ${Sizes.lg}px) {
+        width: auto;
+        justify-content: center;
     }
 `
 
