@@ -114,10 +114,12 @@ const IndexPage = () => {
                 <p>Please call or text to find the next best date to run!</p>
                 <p>A 50% down-payment is required for enrollment.</p>
                 <p style={{marginTop: '35px'}}>You can also get in touch with us by filling out our form and we will get back to you as soon as possible.</p>
-                <Form name="contact" action="/contact_success" methodName="POST" data-netlify="true">
+                <Form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact_success">
+                    <input type="hidden" name="bot-field" />
+                    <input type="hidden" name="form-name" value="contact" />
                     <div className="form-group">
                         <label htmlFor="full_name">Full Name</label>
-                        <input type="text" id="full_name" name="full_name" placeholder="Please enter your full name" required />
+                        <input type="name" id="full_name" name="full_name" placeholder="Please enter your full name" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
