@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import signature from '../images/signature.png'
+import icon from '../images/icon.png'
 
 export const Sizes = {
     sm: '576',
@@ -32,6 +33,15 @@ const Body = styled.div`
         font-family: Arial, Helvetica, sans-serif;
         box-sizing: border-box;
     }
+`
+
+const Nav = styled.nav`
+    background-color: #333;
+    margin-inline: -8px;
+    margin-top: -8px;
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
 `
 
 const NavLink = styled.a`
@@ -154,19 +164,52 @@ export const ImgContainer = styled.div`
     }
 `
 
+const Footer = styled.footer`
+    height: 50px;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+
+    div {
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-inline: auto;
+
+        @media (min-width: ${Sizes.lg}px) {
+            width: 50%;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+`
+
 export default function Layout({ children }) {
     return (
         <Body>
-            <nav style={{backgroundColor: '#333', marginInline: '-8px', marginTop: '-8px', display: 'flex', justifyContent: 'space-between'}}>
+            <Nav>
                 <img src={signature} alt="Wally Pankratz signature" style={{ marginInline: '10px' }} />
                 <div style={{display: 'flex', justifyContent: 'space-around'}}>
                     <NavLink href="/">Home</NavLink>
                     <NavLink href="/about">About</NavLink>
                 </div>
-            </nav>
+            </Nav>
             <main>
                 { children }
             </main>
+            <Footer>
+                <div>
+                    <img src={icon} alt="Initial style logo" width="25px" />
+                    <span>
+                        <strong>Made by:</strong> <a href="https://www.joshdrentlaw.com">www.joshdrentlaw.com</a>
+                    </span>
+                </div>
+            </Footer>
         </Body>
     )
 }
