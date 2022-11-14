@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import signature from '../images/signature.png'
 
-const sizes = {
+export const Sizes = {
     sm: '576',
     md: '768',
     lg: '992',
@@ -97,7 +97,7 @@ export const BlockContainer = styled.section`
         padding-left: 15px;
     }
 
-    @media (min-width: ${sizes.lg}px) {
+    @media (min-width: ${Sizes.lg}px) {
         width: 50%;
 
         blockquote {
@@ -119,7 +119,7 @@ export const MediaContainer = styled.div`
         }
     }
 
-    @media (min-width: ${sizes.lg}px) {
+    @media (min-width: ${Sizes.lg}px) {
         flex-direction: row;
 
         aside {
@@ -148,7 +148,7 @@ export const ImgContainer = styled.div`
         width: 100%;
     }
 
-    @media (min-width: ${sizes.lg}px) {
+    @media (min-width: ${Sizes.lg}px) {
         width: ${props => props.width || '248'}px;
     }
 `
